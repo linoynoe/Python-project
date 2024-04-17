@@ -1,6 +1,13 @@
-import pandas as pd
 import seaborn as sns
+from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split
+
 
 #tesk 1
 
@@ -59,40 +66,40 @@ for col in df.select_dtypes(include=['object']):
 print("\nTarget variable distribution:")
 print(df['satisfaction'].value_counts())
 
-#task 4
-
-interesting_numerical_features = ['Flight Distance', 'Inflight wifi service', 'Online boarding', 'Seat comfort']
-
-for feature in interesting_numerical_features:
-    plt.figure(figsize=(8, 6))
-    sns.histplot(df[feature], kde=True, bins=20, color='skyblue')
-    plt.title(f'Distribution of {feature}')
-    plt.xlabel(feature)
-    plt.ylabel('Frequency')
-    plt.show()
-
-# Describe the distribution of interesting categorical features
-interesting_categorical_features = ['Gender', 'Customer Type', 'Type of Travel', 'Class', 'satisfaction']
-
-for feature in interesting_categorical_features:
-    plt.figure(figsize=(8, 6))
-    sns.countplot(x=feature, data=df, palette='viridis')
-    plt.title(f'Distribution of {feature}')
-    plt.xlabel(feature)
-    plt.ylabel('Count')
-    plt.xticks(rotation=45)
-    plt.show()
-
-# Explore relationships between interesting features
-sns.pairplot(df[interesting_numerical_features], diag_kind='kde', corner=True)
-plt.show()
-
-# Visualize correlation matrix for numerical features
-numerical_features_corr = df[interesting_numerical_features].corr()
-plt.figure(figsize=(10, 8))
-sns.heatmap(numerical_features_corr, annot=True, cmap='coolwarm', fmt=".2f")
-plt.title("Correlation Matrix for Numerical Features")
-plt.show()
+# #task 4
+#
+# interesting_numerical_features = ['Flight Distance', 'Inflight wifi service', 'Online boarding', 'Seat comfort']
+#
+# for feature in interesting_numerical_features:
+#     plt.figure(figsize=(8, 6))
+#     sns.histplot(df[feature], kde=True, bins=20, color='skyblue')
+#     plt.title(f'Distribution of {feature}')
+#     plt.xlabel(feature)
+#     plt.ylabel('Frequency')
+#     plt.show()
+#
+# # Describe the distribution of interesting categorical features
+# interesting_categorical_features = ['Gender', 'Customer Type', 'Type of Travel', 'Class', 'satisfaction']
+#
+# for feature in interesting_categorical_features:
+#     plt.figure(figsize=(8, 6))
+#     sns.countplot(x=feature, data=df, palette='viridis')
+#     plt.title(f'Distribution of {feature}')
+#     plt.xlabel(feature)
+#     plt.ylabel('Count')
+#     plt.xticks(rotation=45)
+#     plt.show()
+#
+# # Explore relationships between interesting features
+# sns.pairplot(df[interesting_numerical_features], diag_kind='kde', corner=True)
+# plt.show()
+#
+# # Visualize correlation matrix for numerical features
+# numerical_features_corr = df[interesting_numerical_features].corr()
+# plt.figure(figsize=(10, 8))
+# sns.heatmap(numerical_features_corr, annot=True, cmap='coolwarm', fmt=".2f")
+# plt.title("Correlation Matrix for Numerical Features")
+# plt.show()
 
 #task 5
 
@@ -151,3 +158,35 @@ for i in range(len(interesting_correlations.columns)):
             plt.ylabel(interesting_correlations.columns[j])
             plt.show()
 
+#Task 9
+
+# Load the dataset
+df = pd.read_csv("your_dataset.csv")
+
+# Separate features (X) and target variable (y)
+X = df.drop('satisfaction', axis=1)  # Features
+y = df['satisfaction']  # Target variable
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize RandomForestClassifier
+rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+
+# Train RandomForestClassifier
+rf_classifier.fit(X_train, y_train)
+
+# Extract feature importance scores
+feature_importances = rf_classifier.feature_importances_
+
+# Sort feature importances in descending order
+sorted_indices = feature_importances.argsort()[::-1]
+
+# Print and plot feature importances
+plt.figure(figsize=(10, 6))
+plt.bar(range(X.shape[1]), feature_importances[sorted_indices], align="center")
+plt.xticks(range(X.shape[1]), X.columns[sorted_indices], rotation=90)
+plt.xlabel("Feature")
+plt.ylabel("Feature Importance")
+plt.title("Feature Importance Scores")
+plt.show()
