@@ -98,6 +98,8 @@ logging.info(
     + str(df.select_dtypes(include="object").nunique())
 )
 
+# save the updated dataset to a new CSV file
+df.to_csv("test_updated.csv", index=False)
 
 # Task3
 
