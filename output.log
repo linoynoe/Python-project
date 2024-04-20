@@ -1,0 +1,281 @@
+2024-04-20 13:04:14,336:INFO:The updated dataset is: 
+   Unnamed: 0     id  Gender      Customer Type  ...  Total_Delay_Score Travel_Distance_Category Overall_Satisfaction_Score  Time_of_Day
+0           0  19556  Female     Loyal Customer  ...               94.0                    Short                      -45.0        Night
+1           1  90035  Female     Loyal Customer  ...                0.0                   Medium                       43.0        Night
+2           2  12360    Male  disloyal Customer  ...                0.0                    Short                       28.0          NaN
+3           3  77959    Male     Loyal Customer  ...                6.0                     Long                       18.0          NaN
+4           4  36875  Female     Loyal Customer  ...               20.0                   Medium                       12.0        Night
+
+[5 rows x 31 columns]
+2024-04-20 13:04:14,337:INFO:Dimensions of the dataset: 
+(25976, 31)
+2024-04-20 13:04:14,338:INFO:Data types of features: 
+Unnamed: 0                              int64
+id                                      int64
+Gender                                 object
+Customer Type                          object
+Age                                     int64
+Type of Travel                         object
+Class                                  object
+Flight Distance                         int64
+Inflight wifi service                   int64
+Departure/Arrival time convenient       int64
+Ease of Online booking                  int64
+Gate location                           int64
+Food and drink                          int64
+Online boarding                         int64
+Seat comfort                            int64
+Inflight entertainment                  int64
+On-board service                        int64
+Leg room service                        int64
+Baggage handling                        int64
+Checkin service                         int64
+Inflight service                        int64
+Cleanliness                             int64
+Departure Delay in Minutes              int64
+Arrival Delay in Minutes              float64
+satisfaction                           object
+Total_Inflight_Service_Score            int64
+Total_Ground_Service_Score              int64
+Total_Delay_Score                     float64
+Travel_Distance_Category             category
+Overall_Satisfaction_Score            float64
+Time_of_Day                          category
+dtype: object
+2024-04-20 13:04:14,438:INFO:Summary statistics for numerical features: 
+         Unnamed: 0             id           Age  ...  Total_Ground_Service_Score  Total_Delay_Score  Overall_Satisfaction_Score
+count  25976.000000   25976.000000  25976.000000  ...                25976.000000       25893.000000                25893.000000
+mean   12987.500000   65005.657992     39.620958  ...                   19.158300          28.965937                    9.740084
+std     7498.769632   37611.526647     15.135685  ...                    4.051759          74.037543                   74.729061
+min        0.000000      17.000000      7.000000  ...                    6.000000           0.000000                -2215.000000
+25%     6493.750000   32170.500000     27.000000  ...                   16.000000           0.000000                   13.000000
+50%    12987.500000   65319.500000     40.000000  ...                   19.000000           2.000000                   32.000000
+75%    19481.250000   97584.250000     51.000000  ...                   22.000000          24.000000                   41.000000
+max    25975.000000  129877.000000     85.000000  ...                   30.000000        2243.000000                   59.000000
+
+[8 rows x 24 columns]
+2024-04-20 13:04:14,445:INFO:Number of unique values for categorical features: 
+Gender            2
+Customer Type     2
+Type of Travel    2
+Class             3
+satisfaction      2
+dtype: int64
+2024-04-20 13:04:14,538:INFO:Dimensions of the dataset after processing: 
+(25976, 31)
+2024-04-20 13:04:14,540:INFO:Data types of features after processing: 
+Unnamed: 0                              int64
+id                                      int64
+Gender                                 object
+Customer Type                          object
+Age                                     int64
+Type of Travel                         object
+Class                                  object
+Flight Distance                         int64
+Inflight wifi service                   int64
+Departure/Arrival time convenient       int64
+Ease of Online booking                  int64
+Gate location                           int64
+Food and drink                          int64
+Online boarding                         int64
+Seat comfort                            int64
+Inflight entertainment                  int64
+On-board service                        int64
+Leg room service                        int64
+Baggage handling                        int64
+Checkin service                         int64
+Inflight service                        int64
+Cleanliness                             int64
+Departure Delay in Minutes              int64
+Arrival Delay in Minutes              float64
+satisfaction                           object
+Total_Inflight_Service_Score            int64
+Total_Ground_Service_Score              int64
+Total_Delay_Score                     float64
+Travel_Distance_Category             category
+Overall_Satisfaction_Score            float64
+Time_of_Day                          category
+dtype: object
+2024-04-20 13:04:14,540:INFO:Dimensions of the dataset after processing: 
+(25976, 31)
+2024-04-20 13:04:14,627:INFO:Summary statistics for numerical features after processing: 
+         Unnamed: 0             id           Age  ...  Total_Ground_Service_Score  Total_Delay_Score  Overall_Satisfaction_Score
+count  25976.000000   25976.000000  25976.000000  ...                25976.000000       25893.000000                25893.000000
+mean   12987.500000   65005.657992     39.620958  ...                   19.158300          28.965937                    9.740084
+std     7498.769632   37611.526647     15.135685  ...                    4.051759          74.037543                   74.729061
+min        0.000000      17.000000      7.000000  ...                    6.000000           0.000000                -2215.000000
+25%     6493.750000   32170.500000     27.000000  ...                   16.000000           0.000000                   13.000000
+50%    12987.500000   65319.500000     40.000000  ...                   19.000000           2.000000                   32.000000
+75%    19481.250000   97584.250000     51.000000  ...                   22.000000          24.000000                   41.000000
+max    25975.000000  129877.000000     85.000000  ...                   30.000000        2243.000000                   59.000000
+
+[8 rows x 24 columns]
+2024-04-20 13:04:14,633:INFO:Number of unique values for categorical features after processing: 
+Gender            2
+Customer Type     2
+Type of Travel    2
+Class             3
+satisfaction      2
+dtype: int64
+2024-04-20 13:04:14,951:INFO:Saved distribution plot for Age as 'Age_distribution.png'
+2024-04-20 13:05:00,889:INFO:Saved distribution plot for Flight Distance as 'Flight Distance_distribution.png'
+2024-04-20 13:05:05,804:INFO:Saved distribution plot for Inflight wifi service as 'Inflight wifi service_distribution.png'
+2024-04-20 13:05:07,864:INFO:Saved distribution plot for Seat comfort as 'Seat comfort_distribution.png'
+2024-04-20 13:05:09,037:INFO:Saved distribution plot for Ease of Online booking as 'Ease of Online booking_distribution.png'
+2024-04-20 13:05:11,828:INFO:Saved distribution plot for Food and drink as 'Food and drink_distribution.png'
+2024-04-20 13:05:13,063:INFO:Saved distribution plot for Online boarding as 'Online boarding_distribution.png'
+2024-04-20 13:05:14,621:INFO:Saved distribution plot for Departure Delay in Minutes as 'Departure Delay in Minutes_distribution.png'
+2024-04-20 13:05:20,909:INFO:Saved distribution plot for Arrival Delay in Minutes as 'Arrival Delay in Minutes_distribution.png'
+2024-04-20 13:05:24,271:INFO:Summary statistics for interesting features: 
+                Age  Flight Distance  Inflight wifi service  ...  Online boarding  Departure Delay in Minutes  Arrival Delay in Minutes
+count  25976.000000     25976.000000           25976.000000  ...     25976.000000                 25976.00000              25893.000000
+mean      39.620958      1193.788459               2.724746  ...         3.261665                    14.30609                 14.740857
+std       15.135685       998.683999               1.335384  ...         1.355536                    37.42316                 37.517539
+min        7.000000        31.000000               0.000000  ...         0.000000                     0.00000                  0.000000
+25%       27.000000       414.000000               2.000000  ...         2.000000                     0.00000                  0.000000
+50%       40.000000       849.000000               3.000000  ...         4.000000                     0.00000                  0.000000
+75%       51.000000      1744.000000               4.000000  ...         4.000000                    12.00000                 13.000000
+max       85.000000      4983.000000               5.000000  ...         5.000000                  1128.00000               1115.000000
+
+[8 rows x 9 columns]
+2024-04-20 13:05:24,273:INFO:Missing values for interesting features: 
+Age                            0
+Flight Distance                0
+Inflight wifi service          0
+Seat comfort                   0
+Ease of Online booking         0
+Food and drink                 0
+Online boarding                0
+Departure Delay in Minutes     0
+Arrival Delay in Minutes      83
+dtype: int64
+2024-04-20 13:05:24,278:INFO:Mean Values: 
+Age                             39.620958
+Flight Distance               1193.788459
+Inflight wifi service            2.724746
+Seat comfort                     3.449222
+Ease of Online booking           2.756775
+Food and drink                   3.215353
+Online boarding                  3.261665
+Departure Delay in Minutes      14.306090
+Arrival Delay in Minutes        14.740857
+dtype: float64
+2024-04-20 13:05:24,279:INFO:Standard Deviations: 
+Age                            15.135685
+Flight Distance               998.683999
+Inflight wifi service           1.335384
+Seat comfort                    1.320090
+Ease of Online booking          1.412951
+Food and drink                  1.331506
+Online boarding                 1.355536
+Departure Delay in Minutes     37.423160
+Arrival Delay in Minutes       37.517539
+dtype: float64
+2024-04-20 13:05:24,297:INFO:Skewness: 
+Age                          -0.000088
+Flight Distance               1.102927
+Inflight wifi service         0.040792
+Seat comfort                 -0.498047
+Ease of Online booking       -0.020655
+Food and drink               -0.170229
+Online boarding              -0.469218
+Departure Delay in Minutes    7.193970
+Arrival Delay in Minutes      6.995682
+dtype: float64
+2024-04-20 13:05:24,318:INFO:Outliers: 
+       Age  Flight Distance  Inflight wifi service  Seat comfort  ...  Food and drink  Online boarding  Departure Delay in Minutes  Arrival Delay in Minutes
+0      NaN              NaN                    NaN           NaN  ...             NaN              NaN                         NaN                       NaN
+1      NaN              NaN                    NaN           NaN  ...             NaN              NaN                         NaN                       NaN
+2      NaN              NaN                    NaN           NaN  ...             NaN              NaN                         NaN                       NaN
+3      NaN           3377.0                    0.0           NaN  ...             NaN              NaN                         NaN                       NaN
+4      NaN              NaN                    NaN           NaN  ...             NaN              NaN                         NaN                       NaN
+...    ...              ...                    ...           ...  ...             ...              ...                         ...                       ...
+25971  NaN              NaN                    NaN           NaN  ...             NaN              NaN                         NaN                       NaN
+25972  NaN              NaN                    NaN           NaN  ...             NaN              NaN                         NaN                       NaN
+25973  NaN              NaN                    NaN           NaN  ...             NaN              NaN                         NaN                       NaN
+25974  NaN              NaN                    NaN           NaN  ...             NaN              NaN                         NaN                       NaN
+25975  NaN              NaN                    NaN           NaN  ...             NaN              NaN                         NaN                       NaN
+
+[25976 rows x 9 columns]
+2024-04-20 13:05:24,337:INFO:Correlation Matrix: 
+                                 Age  Flight Distance  Inflight wifi service  ...  Online boarding  Departure Delay in Minutes  Arrival Delay in Minutes
+Age                         1.000000         0.099409               0.009242  ...         0.202058                   -0.004334                 -0.007387
+Flight Distance             0.099409         1.000000               0.005007  ...         0.214629                    0.003446                  0.000130
+Inflight wifi service       0.009242         0.005007               1.000000  ...         0.459366                   -0.010078                 -0.012251
+Seat comfort                0.154507         0.158957               0.116991  ...         0.415414                   -0.028341                 -0.032981
+Ease of Online booking      0.013565         0.062989               0.710684  ...         0.408003                   -0.001062                 -0.003155
+Food and drink              0.023841         0.057322               0.122306  ...         0.229601                   -0.025957                 -0.028272
+Online boarding             0.202058         0.214629               0.459366  ...         1.000000                   -0.021037                 -0.025833
+Departure Delay in Minutes -0.004334         0.003446              -0.010078  ...        -0.021037                    1.000000                  0.956855
+Arrival Delay in Minutes   -0.007387         0.000130              -0.012251  ...        -0.025833                    0.956855                  1.000000
+
+[9 rows x 9 columns]
+2024-04-20 13:05:24,338:INFO:Correlation between Inflight wifi service and Online boarding: 0.45936613406944343
+2024-04-20 13:05:24,500:INFO:Saved Inflight Entertainment Ratings by Age Group plot as 'Inflight_Entertainment_Age_Group.png'
+2024-04-20 13:05:45,172:INFO:Mean Inflight wifi service rating for Business travelers: nan
+2024-04-20 13:05:45,173:INFO:Mean Inflight wifi service rating for Personal travelers: nan
+2024-04-20 13:05:45,411:INFO:Saved Seat Comfort Ratings by Class plot as 'Seat_Comfort_Class.png'
+2024-04-20 13:05:56,619:INFO:Correlation between Flight Distance and Inflight entertainment: 0.13753762738232267
+2024-04-20 13:05:57,304:INFO:Correlation Matrix plot saved as 'Correlation_Matrix.png'
+2024-04-20 13:06:38,288:INFO:ANOVA Results: 
+                              Feature  ANOVA F-Score        p-value
+9                     Online boarding    8408.438791   0.000000e+00
+22     Type of Travel_Personal Travel    6716.296461   0.000000e+00
+23                          Class_Eco    6321.229210   0.000000e+00
+11             Inflight entertainment    4916.612363   0.000000e+00
+10                       Seat comfort    3538.777574   0.000000e+00
+12                   On-board service    2994.033335   0.000000e+00
+17                        Cleanliness    2848.080142   0.000000e+00
+13                   Leg room service    2754.182129   0.000000e+00
+3                     Flight Distance    2481.216163   0.000000e+00
+4               Inflight wifi service    2216.366657   0.000000e+00
+14                   Baggage handling    1767.510511   0.000000e+00
+16                   Inflight service    1666.916111   0.000000e+00
+15                    Checkin service    1608.607617   0.000000e+00
+8                      Food and drink    1281.897424  4.453121e-274
+21    Customer Type_disloyal Customer     866.064875  2.776765e-187
+6              Ease of Online booking     662.503583  2.750470e-144
+26                    Age Group_30-50     409.976650   1.853070e-90
+2                                 Age     390.462310   2.827821e-86
+24                     Class_Eco Plus     310.884420   3.547702e-69
+25                    Age Group_18-30     170.845768   6.417143e-39
+5   Departure/Arrival time convenient     109.517807   1.405190e-25
+19           Arrival Delay in Minutes      96.883290   8.062082e-23
+18         Departure Delay in Minutes      69.436960   8.274676e-17
+27                      Age Group_50+      26.645520   2.462160e-07
+7                       Gate location       7.182785   7.365278e-03
+1                                  id       3.123346   7.718988e-02
+20                        Gender_Male       1.397534   2.371477e-01
+0                          Unnamed: 0       0.059312   8.075893e-01
+2024-04-20 13:06:38,464:INFO:ANOVA F-Score plot saved as 'ANOVA_FScore.png'
+2024-04-20 13:07:15,523:INFO:Feature Importances from RandomForestClassifier: 
+                              Feature  Importance
+9                     Online boarding    0.182290
+4               Inflight wifi service    0.124374
+22     Type of Travel_Personal Travel    0.112661
+23                          Class_Eco    0.065162
+11             Inflight entertainment    0.057005
+10                       Seat comfort    0.041252
+6              Ease of Online booking    0.037794
+21    Customer Type_disloyal Customer    0.036456
+13                   Leg room service    0.036095
+3                     Flight Distance    0.033520
+17                        Cleanliness    0.028605
+12                   On-board service    0.028167
+1                                  id    0.027172
+2                                 Age    0.026734
+15                    Checkin service    0.024048
+14                   Baggage handling    0.020861
+16                   Inflight service    0.019445
+0                          Unnamed: 0    0.018059
+5   Departure/Arrival time convenient    0.016497
+7                       Gate location    0.012801
+19           Arrival Delay in Minutes    0.011453
+8                      Food and drink    0.011364
+18         Departure Delay in Minutes    0.009846
+24                     Class_Eco Plus    0.004778
+25                    Age Group_18-30    0.003998
+20                        Gender_Male    0.003714
+26                    Age Group_30-50    0.003194
+27                      Age Group_50+    0.002653
+2024-04-20 13:07:15,705:INFO:Feature Importance plot saved as 'Feature_Importance.png'
